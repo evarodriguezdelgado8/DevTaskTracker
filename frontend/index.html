@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTask Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DevTask <span>Tracker</span></h1>
+            <p>Gestor de tareas para desarrolladores FullStack</p>
+        </header>
+
+        <section class="form-card">
+            <form id="taskForm">
+                <input type="text" id="titulo" placeholder="¿Qué tarea tienes pendiente?" required>
+                <input type="text" id="descripcion" placeholder="Descripción breve..." required>
+                
+                <div class="row">
+                    <select id="tecnologia">
+                        <option value="JS">JavaScript</option>
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+
+                    <select id="estado">
+                        <option value="pending">Pendiente</option>
+                        <option value="done">Completada</option>
+                    </select>
+                    <button type="submit" id="btn-save">Guardar Tarea</button>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <h2 class="section-title">Tareas Pendientes 🚀</h2>
+            <ul id="taskListPending" class="task-list">
+                </ul>
+        </section>
+
+        <section class="history-section">
+            <h2 class="section-title history-title">Histórico (Completadas) 📜</h2>
+            <ul id="taskListDone" class="task-list history-list">
+                </ul>
+        </section>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h3>¿Estás seguro? 🗑️</h3>
+            <p>Esta acción no se puede deshacer. ¿Quieres eliminar la tarea definitivamente?</p>
+            <div class="modal-actions">
+                <button id="btnCancelDelete" class="btn-cancel">Cancelar</button>
+                <button id="btnConfirmDelete" class="btn-confirm">Sí, Eliminar</button>
+            </div>
+        </div>
+    </div>
+   
+
+    <script src="app.js"></script>
+</body>
+</html>
